@@ -17,7 +17,7 @@ module.exports = function() {
 
 
   //Configuracao do ambiente
-  app.set('port', 3000);
+  app.set('port', 5000);
 
   //middleware
   app.use(express.static('./public'));
