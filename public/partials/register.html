@@ -1,0 +1,34 @@
+<h1 class="text-center">Contato</h1>
+<p ng-show="mensagem.texto">
+  {{mensagem.texto}}
+</p>
+<form ng-submit="salva()">
+  <!-- ng-submit="salva()" -->
+  <div class=form-group>
+    <label for="nome">Nome completo</label>
+    <input type="text" class="form-control" id="nome" name="nome"
+    required ng-model="usuario.nome">
+  </div>
+  <div class=form-group>
+    <label for="email">Email</label>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="email" class="form-control" id="email" name="email"
+      placeholder="email@exemplo.com" required ng-model="usuario.email">
+    </div>
+  </div>
+  <div class=form-group>
+    <label for="senha">Senha</label>
+    <input type="password" class="form-control" id="senha" name="senha"
+    required ng-model="usuario.senha">
+  </div>
+  <div class=form-group>
+    <label for="telefone">Telefone</label>
+    <input type="text" class="form-control" id="telefone" name="telefone"
+    required ng-model="usuario.telefone">
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a href="#/entrar" class="btn btn-default">Voltar</a>
+  </div>
+</form>

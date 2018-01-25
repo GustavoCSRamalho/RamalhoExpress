@@ -1,0 +1,12 @@
+<!-- public/partials/contato.html -->
+<h1 class="text-center">Trabalhe conosco</h1>
+<p ng-show="mensagem.texto">
+  {{mensagem.texto}}
+</p>
+<form>
+  <div class="teste">
+    <!-- <label for="trabalheconosco">Trabalhe conosco</label> -->
+    <label  class="text-muted" id="trabalheconosco" name="trabalheconosco"
+    ng-model="dados.trabalheconosco">{{dados.trabalheconosco}}</label>
+  </div>
+</form>

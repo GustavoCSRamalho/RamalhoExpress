@@ -1,0 +1,27 @@
+<!-- public/partials/index.html -->
+
+<!-- <a ng-href="#/contato" class="btn btn-primary">Novo Contato</a> -->
+<p>Procure um evento: </p>
+<input class="text-muted" ng-model="filtro" type="search" placeholder="Nome do evento">
+<p ng-show="eventos.length">Total de Eventos: {{eventos.length}}</p>
+<p class="text-info" ng-hide="eventos.length">
+Não há eventos cadastrados!
+</p>
+<meu-painel titulo="Listagem de Eventos">
+<div class="table-responsive">
+  <table class="table table-hover text-muted ">
+    <tr>
+      <th class="col-sm-2">NOME</th>
+      <th class="col-sm-2">DATA</th>
+      <th class="col-sm-2">DESCRICAO</th>
+      <th class="col-sm-2">IMG</th>
+    </tr>
+    <tr ng-repeat="evento in eventos | filter: filtro">
+      <td  class="col-sm-1" >{{evento.titulo}}</td>
+      <td  class="col-sm-1" >Data</td>
+      <td class="col-sm-1">{{evento.descricao}}</td>
+      <td class="col-sm-1"><img src="uploads/{{evento.foto}}" class="img-responsive" alt="Responsive image" style="width:60%; height: 150px"></td>
+    </tr>
+  </table>
+</div>
+<meu-painel>

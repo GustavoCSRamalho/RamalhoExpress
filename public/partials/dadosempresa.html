@@ -1,0 +1,53 @@
+<!-- public/partials/contato.html -->
+<h1 class="text-center">Dados da Empresa</h1>
+<p ng-show="mensagem.texto">
+  {{mensagem.texto}}
+</p>
+<form ng-submit="salva()">
+  <div class=form-group>
+    <label for="empresa">Empresa</label>
+    <textarea type="text" class="form-control" id="empresa" name="empresa"
+    placeholder="Dados da Empresa" required ng-model="dados.empresa">
+    </textarea>
+  </div>
+  <div class=form-group>
+    <label for="frota">Frota</label>
+      <textarea type="text" class="form-control" id="frota" name="frota"
+      placeholder="Dados da Frota" required ng-model="dados.frota">
+    </textarea>
+  </div>
+  <div class=form-group>
+    <label for="servicos">Serviços</label>
+      <textarea type="text" class="form-control" id="servicos" name="servicos"
+      placeholder="Dados do servico" required ng-model="dados.servicos">
+    </textarea>
+  </div>
+  <div class=form-group>
+    <label>Calendario</label>
+      <textarea type="text" class="form-control" id="calendario" name="calendario"
+      placeholder="Dados do calendario" required ng-model="dados.calendario">
+      </textarea>
+  </div>
+  <div class=form-group>
+    <label for="politicareserva">Politica de Reserva</label>
+      <textarea type="text" class="form-control" id="politicareserva" name="politicareserva"
+      placeholder="Dados da politica de reserva" required ng-model="dados.politicareserva">
+      </textarea>
+  </div>
+  <div class=form-group>
+    <label for="trabalheconosco">Trabalhe Conosco</label>
+      <textarea type="text" class="form-control" id="trabalheconosco" name="trabalheconosco"
+      placeholder="Dados para se juntar a empresa" required ng-model="dados.trabalheconosco">
+      </textarea>
+  </div>
+  <div class=form-group>
+    <label for="faleconosco">Fale Conosco</label>
+      <textarea type="text" class="form-control" id="faleconosco" name="faleconosco"
+      placeholder="Dados para contato" required ng-model="dados.faleconosco">
+      </textarea>
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a href="#/opcoes" class="btn btn-default">Voltar</a>
+  </div>
+</form>

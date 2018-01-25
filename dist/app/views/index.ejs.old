@@ -1,0 +1,13 @@
+<!-- app/views/index.ejs -->
+
+<!doctype html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bem-Vindo</title>
+</head>
+<body>
+  <h1>Bem-Vindo ao <%=nome %></h1>
+</body>
+</html>
