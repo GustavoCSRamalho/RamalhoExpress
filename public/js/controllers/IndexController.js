@@ -6,7 +6,7 @@ angular.module('ramalhoexpress').controller('IndexController',
 
     Home.query(
 			function (eventos) {
-				$scope.eventos = eventos;
+				$scope.eventos = eventos.reverse();
 			},
 			function (erro) {
 				console.log("Não foi possível obter a lista de eventos");

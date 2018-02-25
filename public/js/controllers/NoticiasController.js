@@ -24,29 +24,24 @@ angular.module('ramalhoexpress').controller('NoticiasController',
       $scope.noticia = new Noticia();
       $scope.salva = function() {
         console.log("Salva ativado!123");
-        //Pegar dados da imagem e salvar ela
 
-        // var formData = new FormData();
-      	// formData.append("file", document.getElementById("arquivoInput").files[0]);
-        // var xhr = new XMLHttpRequest();
-        // xhr.onreadystatechange = function() {
-        //   if (xhr.readyState == 4) {
-      	// 			var div = document.getElementById('menssagem');
-        //       var resposta = xhr.responseText;
-        //       div.innerHTML += resposta;
-        //   }
-      	// }
-
-        // xhr.open("POST", "http://localhost:3000/upload");
-      	// xhr.send(formData);
-
-
-        //Fim
         var dados = $scope.noticia;
         dados.foto = document.getElementById('arquivoInput').files[0].name;
+        var dataMDD = dados.data;
 
+        dataMDD = dataMDD.toISOString().substring(0, 10).split('-').reverse();
+        dataMDD = dataMDD[0]+"-"+dataMDD[1]+"-"+dataMDD[2];
+        console.log("Data  : "+dataMDD);
+        // dados.data = data;
 
-        $http.post('/noticia', {'dados':dados});
+        var dadosEnviar = {
+          titulo : dados.titulo,
+          descricao : dados.descricao,
+          data: dataMDD,
+          foto: dados.foto
+        };
+
+        $http.post('/noticia', {'dados':dadosEnviar});
         console.log("Titulo: "+dados.titulo);
         console.log("Foi!");
 
@@ -85,26 +80,10 @@ angular.module('ramalhoexpress').controller('NoticiasController',
       };
 
       $scope.salva1 = function() {
-        console.log("Clicou");
-
-        var formData = new FormData();
-      	formData.append("file", document.getElementById("arquivoInput").files[0]);
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState == 4) {
-      				var div = document.getElementById('menssagem');
-              var resposta = xhr.responseText;
-              div.innerHTML += resposta;
-          }
-      	}
-
-        xhr.open("POST", "http://localhost:3000/upload");
-      	xhr.send(formData);
-
-        var url = "http://localhost:3000/upload";
-        // $http.post('/upload');
-        console.log("Foi");
-        console.log("Req: 1: "+document.getElementById('arquivoInput').files[0].name);
-
-      };
-    });
+        var data = $scope.noticia.data;
+        data = data.toISOString().substring(0, 10).split('-').reverse();
+        data = data[0]+"-"+data[1]+"-"+data[2];
+        // data = new Date(data);
+        console.log("DATE : "+data);
+    }
+  });

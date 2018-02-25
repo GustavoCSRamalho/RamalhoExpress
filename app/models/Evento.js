@@ -11,6 +11,10 @@ module.exports = function() {
       type: String,
       required: true
     },
+    data:{
+      type: String,
+      required: true
+    },
     foto: {
       type: String,
       required: true

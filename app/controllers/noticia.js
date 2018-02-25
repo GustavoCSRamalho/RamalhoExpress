@@ -74,7 +74,11 @@ var controllerDados = {
         );
         // Falta ainda
        }else{
-        Noticia.create(req.body.dados)
+         var dados = req.body.dados;
+        //  dados.data = data.toISOString().substring(0, 10).split('-').reverse();
+        //  dados.data = data[0]+"-"+data[1]+"-"+data[2];
+        //  console.log("DATA : "+dados.data);
+        Noticia.create(dados)
         .then(
           function(dados) {
             res.status(201).json(dados);
